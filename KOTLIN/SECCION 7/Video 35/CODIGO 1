@@ -1,0 +1,22 @@
+CÓDIGO BUSCADO POR IA
+CÓDIGO DE OPCIÓN RECOMENDADA:
+import java.math.BigDecimal
+
+val precio = BigDecimal("19.99")
+val impuesto = BigDecimal("0.21")
+val total = precio * (BigDecimal.ONE + impuesto)
+
+CÓDIGO DE OPCIÓN NO RECOMENDADA:
+val precio = 19.99
+val impuesto = 0.21
+val total = precio * (1 + impuesto)
+
+LIBRERIA:
+import javax.money.Monetary
+import javax.money.MonetaryAmount
+
+val precio: MonetaryAmount = Monetary.getDefaultAmountFactory()
+    .setCurrency("USD")
+    .setNumber(19.99)
+    .create()
+
